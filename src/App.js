@@ -23,6 +23,7 @@ const App = () => {
       const response = await fetch(exampleReq);
       const data = await response.json();
       setRecipes(data.hits);
+      console.log(data.hits)
   }
 
   const updateSearch = e => {
@@ -39,7 +40,7 @@ const App = () => {
   return (
     
       <div className="App">
-          <Jumbotron>
+          <Jumbotron className="searchBox ">
             <h1>Type the Ingredients You have in Your Kitchen!</h1>
             <form onSubmit={getSearch} className="search-form">
                 <input className="search-bar" type="text" value={search} onChange={updateSearch}/>

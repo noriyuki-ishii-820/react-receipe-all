@@ -7,7 +7,7 @@ import Jumbotron from 'react-bootstrap/Jumbotron'
 const Recipe = ({title, calories, image, ingredients}) => {
     return (
         <div className="resultBody">
-            <Jumbotron>
+            <Jumbotron className="resultBox">
                 <Container>
                     <Row>
                         <Col>
@@ -23,8 +23,8 @@ const Recipe = ({title, calories, image, ingredients}) => {
                                     <li>{ingredient.text}</li>
                                 ))}
                             </ul>
-                            <h3>Calories</h3>
-                            <p>{calories}</p>
+                            
+                            <p className="calories">Calories: {Math.round(calories).toLocaleString()}</p>
                         </Col>
                         <Col xs={6} md={4} className="imageFrame">
                             <img src={image} alt="" className="resultImage"/>
