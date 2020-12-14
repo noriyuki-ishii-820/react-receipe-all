@@ -2,37 +2,40 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.search-form {
+  margin: 20px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.search-bar {
+  width:40%;
+  height:40px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.search-button {
+  height:40px;
+  width:120px;
+  margin:0 5px;
 }
 
-.App-link {
-  color: #61dafb;
+.resultBody {
+  width: 80%;
+  margin: auto;
+  padding: 0;  
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.ingredientList{
+  display: inline-block; 
+  text-align: left; 
+  margin: 0;
+  padding:0;
+}
+
+.imageFrame {
+  display:flex;
+  align-items:center;
+}
+
+.resultImage {
+  width:90%;
+  border-radius:5px;
 }
