@@ -38,16 +38,20 @@ body {
   box-shadow: 5px 5px grey;
 }
 
-h3 {
+h5 {
   display: block; 
+  text-align: left; 
+  margin: 10px 0;
+}
+
+.list{
   text-align: left; 
 }
 
-.ingredientList{
-  display: inline-block; 
-  text-align: left; 
-  margin: 0;
-  padding:0;
+.list-no-dot {
+  list-style-type:none;
+  margin:0;
+
 }
 
 .imageFrame {
@@ -60,9 +64,27 @@ h3 {
   border-radius:5px;
 }
 
-.calories {
-  display: block; 
-  text-align: left; 
-  margin-top:20px;
+.italics {
   font-style:italic;
+}
+
+.italicsWithLinks {
+  font-style:italic;
+  font-weight:bold;
+  text-decoration: underline;
+}
+
+.italicsWithLinks:hover {
+  font-style:italic;
+  font-weight:bold;
+  text-decoration: underline;
+  cursor:pointer;
+}
+
+.healthlabel {
+  color:white;
+}
+
+.checkRecipe {
+  margin-top:20px;
 }
