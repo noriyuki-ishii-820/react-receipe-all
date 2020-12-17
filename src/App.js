@@ -2,7 +2,8 @@ import React, {useEffect, useState} from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Jumbotron from 'react-bootstrap/Jumbotron'
 import Recipe from "./Recipe";
-import Search from "./Search";
+import SearchCountry from "./SearchCountry";
+import SearchProtein from "./SearchProtein";
 import './App.css';
 
 const App = () => {
@@ -24,7 +25,6 @@ const App = () => {
       const data = await response.json();
       setRecipes(data.hits);
       console.log(data.hits)
-
   }
 
   const updateSearch = e => {
@@ -34,7 +34,15 @@ const App = () => {
 
   const getSearch = e => {
     e.preventDefault();
-    setQuery(search)
+
+    if (!e.target.value){
+      var input = document.getElementById("text-input").value
+   
+      setQuery(input)
+    } else {
+      setQuery(search)
+    }
+
     setSearch("");
   }
   
@@ -49,7 +57,8 @@ const App = () => {
             </form>
             <h6>You can put multiple keywords, separating by space.</h6>
             <h6>Or search by popular keywords:</h6>
-            <Search />
+            <SearchCountry />
+            <SearchProtein />
           </Jumbotron>
           {recipes.map(recipe => (
               <Recipe

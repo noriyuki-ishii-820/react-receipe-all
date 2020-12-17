@@ -1,38 +1,39 @@
 import React, { useState } from 'react';
 import { Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
-let country;
 
-const Search = (props) => {
+const SearchProtein = (props) => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const toggle = () => setDropdownOpen(prevState => !prevState);
-  const countries = ["Australian", "Chinese", "Japanese", "French", "American", "Italian", "English", "Vietnamese", "Thai", "Mexican", "Singaporean", "Korean", "German", "Russian"]
+  const proteins = ["Beef", "Pork", "Chicken", "Tofu", "Prawn", "Lamb", "Salmon"]
   
-  countries.sort(function(a,b) {
+  proteins.sort(function(a,b) {
       return a.localeCompare(b);
   })
 
   function handleClick (){
-      var countryChoice = this.value;
-      console.log(countryChoice)
-      document.getElementById("text-input").value = countryChoice;
+      var proteinChoice = this.value;
+      if (document.getElementById("text-input").value === ""){
+      document.getElementById("text-input").value = proteinChoice;
+      } else {
+        document.getElementById("text-input").value += " " + proteinChoice;
+      }
   }
 
   return (
     <Dropdown isOpen={dropdownOpen} toggle={toggle}>
       <DropdownToggle caret>
-        By Countries
+        By Popular Source of Protein
         </DropdownToggle>
       <DropdownMenu>
-        {countries.map(function(country) {
+        {proteins.map(function(protein) {
             return <DropdownItem 
-            value={country}
+            value={protein}
             onClick = {handleClick} 
-            >{country}</DropdownItem>
+            >{protein}</DropdownItem>
         })}
       </DropdownMenu>
     </Dropdown>
-
   );
 }
 
-export default Search;
+export default SearchProtein;
