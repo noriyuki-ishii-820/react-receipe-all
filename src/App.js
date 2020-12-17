@@ -2,6 +2,7 @@ import React, {useEffect, useState} from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Jumbotron from 'react-bootstrap/Jumbotron'
 import Recipe from "./Recipe";
+import Search from "./Search";
 import './App.css';
 
 const App = () => {
@@ -10,7 +11,6 @@ const App = () => {
   const [recipes, setRecipes] = useState([]);
   const [search, setSearch] = useState("");
   const [query, setQuery] = useState("chicken");
-
 
   const exampleReq =
   `https://api.edamam.com/search?q=${query}&app_id=${APP_ID}&app_key=${APP_KEY}`
@@ -24,6 +24,7 @@ const App = () => {
       const data = await response.json();
       setRecipes(data.hits);
       console.log(data.hits)
+
   }
 
   const updateSearch = e => {
@@ -43,11 +44,12 @@ const App = () => {
           <Jumbotron className="searchBox ">
             <h1>Type the Ingredients You have in Your Kitchen!</h1>
             <form onSubmit={getSearch} className="search-form">
-                <input className="search-bar" type="text" value={search} onChange={updateSearch}/>
+                <input className="search-bar" id="text-input" type="text" value={search} onChange={updateSearch}/>
                 <button className="search-button btn-warning" type="submit">Search</button>
             </form>
             <h6>You can put multiple keywords, separating by space.</h6>
-            
+            <h6>Or search by popular keywords:</h6>
+            <Search />
           </Jumbotron>
           {recipes.map(recipe => (
               <Recipe

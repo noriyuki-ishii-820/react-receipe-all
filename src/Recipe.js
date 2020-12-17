@@ -5,8 +5,6 @@ import Col from "react-bootstrap/Col";
 import Jumbotron from "react-bootstrap/Jumbotron";
 import { Button, Modal, ModalBody, ModalFooter } from "reactstrap";
 
-
-
 const Recipe = ({
   title,
   calories,
