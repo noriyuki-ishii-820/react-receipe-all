@@ -4,6 +4,8 @@ import Jumbotron from 'react-bootstrap/Jumbotron'
 import Recipe from "./Recipe";
 import SearchCountry from "./SearchCountry";
 import SearchProtein from "./SearchProtein";
+import NavBar from "./Navbar";
+import Footer from "./Footer";
 import './App.css';
 
 const App = () => {
@@ -47,8 +49,9 @@ const App = () => {
   }
   
   return (
-    
+      
       <div className="App">
+          <NavBar />
           <Jumbotron className="searchBox ">
             <h1>Type the Ingredients You have in Your Kitchen!</h1>
             <form onSubmit={getSearch} className="search-form">
@@ -56,9 +59,13 @@ const App = () => {
                 <button className="search-button btn-warning" type="submit">Search</button>
             </form>
             <h6>You can put multiple keywords, separating by space.</h6>
+            <br />
             <h6>Or search by popular keywords:</h6>
-            <SearchCountry />
-            <SearchProtein />
+            <ul class="popularSearch">
+              <li><SearchCountry /></li>
+              <li><SearchProtein /></li>
+            </ul>
+            
           </Jumbotron>
           {recipes.map(recipe => (
               <Recipe
@@ -72,6 +79,7 @@ const App = () => {
                 url = {recipe.recipe.url}
               />
           ))}
+          <Footer />
       </div>
 
   )
