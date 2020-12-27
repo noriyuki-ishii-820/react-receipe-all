@@ -14,7 +14,7 @@
 
 ## Description
 
-This application allows the user to search the best recipe for the day's meal. Using Edamam API (https://developer.edamam.com/), the user can search the databse by any keywords or by the popular ones (country and source of protein in the dropdowns)
+This application allows the user to search the best recipe for the day's meal. Using Edamam API (https://developer.edamam.com/), the user can search the database by any keywords or by the popular ones (country and source of protein in the drop downs)
 
 Please find the deployed application from here deloyed on Heroku:
 https://angry-panini-57f9c3.netlify.app/
